@@ -111,6 +111,26 @@ public class sqltool {
 		return list;
 	}
 	
+	public static List<Integer> get_Related(int id) throws Exception {
+	    stmt =  conn.createStatement();
+	    String sql = String.format("select a.commodityId from commodity a,commodity b where a.cType=b.cType AND b.commodityId=%d order by a.commodityId DESC",id);
+        ResultSet rs = stmt.executeQuery(sql);
+        List<Integer> list = new ArrayList<Integer>();
+        while(rs.next())
+            list.add(rs.getInt("commodityId"));
+		return list;
+	}
+	
+	public static List<Integer> get_Upsell() throws Exception {
+	    stmt =  conn.createStatement();
+        ResultSet rs = stmt.executeQuery("select commodityId from commodity order by agio ASC");
+        List<Integer> list = new ArrayList<Integer>();
+        while(rs.next())
+            list.add(rs.getInt("commodityId"));
+		return list;
+	}
+	
+	
 	public static List<Integer> get_new_item() throws Exception {
 	    stmt =  conn.createStatement();
         ResultSet rs = stmt.executeQuery("select commodityId from commodity order by commodityId DESC");

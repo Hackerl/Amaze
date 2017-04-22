@@ -931,7 +931,7 @@
           <div class="slider-items-products">
             <div class="title col-lg-6">
               <div class="new_title center">
-                <h2><span>Featured Products</span></h2>
+                <h2><span>Lastest Products</span></h2>
               </div>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra tristique eros dignissim venenatis. Nam et dolor id arcu efficitur tincidunt quis non nisi. Duis commodo pellentesque quam, id mollis ligula dictum id. Morbi cursus consectetur magna a egestas. Sed eu sagittis leo. Mauris euismod dapibus nisl, at euismod nunc commodo vel. Nulla semper non nisi in placerat. Aenean at nisl eu odio ullamcorper varius non ac ante. Quisque dictum, felis lobortis faucibus ornare, enim mi mollis ex, ac vestibulum neque nibh at nisi. </p>
               <a title="Subscribe" class="view-all" href="#"><span>View All Products</span></a> </div>
@@ -958,7 +958,7 @@
     </div>
   </section>
   <!-- End main container -->
-  <!-- Latest Blog -->
+  <!-- Latest Blog 
   <section class="latest-blog container">
     <div class="blog_post">
       <div class="blog-title">
@@ -990,7 +990,7 @@
       </div>
     </div>
   </section>
-  <!-- End Latest Blog -->
+   End Latest Blog -->
   <!-- Footer -->
   <footer>
     <div class="container">
