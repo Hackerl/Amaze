@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <center>
    <form method="post" action="updateuser1.jsp">
      <table border="1" cellpadding="1" cellspacing="0">
-       <th colspan="6" text-align:center>个人简历</th>
+       <th colspan="6" text-align:center>更新信息</th>
        <tr>
         <td>Username:</td>
         <td><input type="text" name="username"></td>
