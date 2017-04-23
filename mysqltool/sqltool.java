@@ -150,7 +150,7 @@ public class sqltool {
 	}
 	
 	public static List<Integer> get_type_top_item(int type) throws Exception {
-	    String sql = String.format("select commodityId,sum(buyitunm) as all_number from Buyitem,commodity where commodity.cType=%d AND commodity.commodityId=Buyitem.buycommodityId group by buycommodityId order by all_number DESC",type);
+	    String sql = String.format("select * from commodity LEFT JOIN (select buycommodityId,sum(buyitunm) as all_number from Buyitem group by buycommodityId) AS buy_time ON commodityId=buycommodityId where cType=%d order by all_number DESC",type);
         ResultSet rs = stmt.executeQuery(sql);
         List<Integer> list = new ArrayList<Integer>();
         while(rs.next())
