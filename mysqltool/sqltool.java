@@ -167,11 +167,19 @@ public class sqltool {
 		return list;
 	}
 	
+	
 	public static int updateitem(String name,int type,double price,double agio) throws Exception {
 	    
 		String sql = String.format("UPDATE user SET cType=%d,price=%f,agio=%f WHERE commodityName='%s'",type, price,agio, name);
         int row = stmt.executeUpdate(sql);
 		return row;
+	}
+	
+    public static ResultSet get_user_buyitem(String name) throws Exception {
+	    
+		String sql = String.format("select * from Buyitem,commodity where username='%s' AND commodity.commodityId=Buyitem.buycommodityId",name);
+        ResultSet rs = stmt.executeQuery(sql);
+		return rs;
 	}
 	
 	public static int auth(String username,String pwd) throws Exception {
