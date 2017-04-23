@@ -1,4 +1,4 @@
-﻿<%@ page language="java" import="java.util.*,com.mysqltool.*,java.sql.ResultSet,java.sql.SQLException" pageEncoding="UTF-8"%>
+﻿﻿<%@ page language="java" import="java.util.*,com.mysqltool.*,java.sql.ResultSet,java.sql.SQLException" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,20 +10,24 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Amaze, premium HTML5 &amp; CSS3 template</title>
+
 <!-- Favicons Icon -->
 <link rel="icon" href="http://demo.magikthemes.com/skin/frontend/base/default/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="http://demo.magikthemes.com/skin/frontend/base/default/favicon.ico" type="image/x-icon" />
+
 <!-- Mobile Specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <!-- CSS Style -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="css/slider.css" type="text/css">
+<link rel="stylesheet" href="css/revslider.css" type="text/css">
 <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
 <link rel="stylesheet" href="css/owl.theme.css" type="text/css">
 <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
+
 <!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,800,400,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="page">
@@ -38,8 +42,8 @@
         </div>
         <div class=" col-lg-7 col-sm-8 col-md-7 col-xs-12">
           <div class="header-top">
-            <div class="welcome-msg hidden-xs">Welcome To Hackerl's World! </div>
-            <!-- Header Language --
+            <div class="welcome-msg hidden-xs"> Default welcome msg! </div>
+            <!-- Header Language -->
             <div class="dropdown block-language-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#"> <img src="images/english.png" alt="language"> English <span class="caret"></span> </a>
               <ul class="dropdown-menu" role="menu">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/english.png" alt="language"> English </a></li>
@@ -47,7 +51,7 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/german.png" alt="language"> German </a></li>
               </ul>
             </div>
-            !-- End Header Language -->
+            <!-- End Header Language -->
             <!-- Header Top Links -->
             <div class="toplinks">
               <div class="links">
@@ -66,29 +70,18 @@
                   </ul>
                 </div>
                 <!-- End Header Company -->
-                <div class="login">
-                      <%
+                <div class="login"><%
                 	    if(session.getAttribute("username") == null)
                             out.println("<a href=\"login.jsp\"><span class=\"hidden-xs\">Log In</span></a>");
                         else
                             out.println("<a href=\"#\"><span class=\"hidden-xs\">"+session.getAttribute("username")+"</span></a>");
-                        %> 
-                
-                </div>
+                        %> </div>
               </div>
             </div>
             <!-- End Header Top Links -->
           </div>
           <div class="cart_cur_block">
-            <!-- Header Currency --
-            <div class="dropdown block-currency-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#"> USD <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> $ - Dollar </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> £ - Pound </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> € - Euro </a></li>
-              </ul>
-            </div>
-            -- End Header Currency -->
+
             <!-- Top Cart -->
             <div class="top-cart-contain">
               <div class="mini-cart">
@@ -102,8 +95,11 @@
                         else
                             out.println("Login first");
                         
-                    %></div>
+                    %>
+                    
+                    </div>
                     <ul id="cart-sidebar" class="mini-products-list">
+                      
                     <%
                          double all_money=0;
                          if(session.getAttribute("username")!=null){
@@ -139,28 +135,13 @@
 
                          }
                      %>
-                    <!--
-                      <li class="item odd"> <a href="product_detail.html" title="Skater Dress In Leaf Print" class="product-image"><img src="products-images/product1.jpg" alt="Product image" width="55"></a>
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a> <a class="btn-edit" title="Edit item" href="#">Edit item</a>
-                          <p class="product-name"><a href="product_detail.html">Sample Product</a> </p>
-                          <strong>1</strong> x <span class="price">$20.00</span> </div>
-                      </li>
-                      <li class="item even"> <a href="product_detail.html" title="Product layout: large content" class="product-image"><img src="products-images/product1.jpg" alt="Product image" width="55"></a>
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a> <a class="btn-edit" title="Edit item" href="#">Edit item</a>
-                          <p class="product-name"><a href="product_detail.html">Sample Product</a> </p>
-                          <strong>1</strong> x <span class="price">$230.00</span> </div>
-                      </li>
-                      <li class="item last odd"> <a href="product_detail.html" title="Skater Dress In Leaf Print" class="product-image"><img src="products-images/product1.jpg" alt="Product image" width="55"></a>
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a><a class="btn-edit" title="Edit item" href="#">Edit item</a>
-                          <p class="product-name"><a href="product_detail.html">Sample Product</a> </p>
-                          <strong>2</strong> x <span class="price">$420.00</span> </div>
-                      </li>    
-                      -->
+                      
+                      
                     </ul>
                     <div class="top-subtotal">Subtotal: <span class="price">$<% out.println(all_money); %></span></div>
                     <div class="actions">
-                      <a href="checkout.jsp"><button class="btn-checkout" type="button"><span>Checkout</span></button></a>
-                      <a href="cart.jsp"><button class="view-cart" type="button"><span>View Cart</span></button></a>
+                      <button class="btn-checkout" type="button"><span>Checkout</span></button>
+                      <button class="view-cart" type="button"><span>View Cart</span></button>
                     </div>
                   </div>
                 </div>
@@ -188,14 +169,14 @@
               <ul style="display:none;" class="submenu">
                 <li>
                   <ul class="topnav"><li class="level0 nav-6 level-top first parent"> <a class="level-top" href="index.jsp"> <span>Home</span> </a>
-                      <!--<ul class="level0">
+                      <ul class="level0">
                         <li class="level1"><a href="../../layout-1/red/index.jsp"><span>Home Version 1</span></a> </li>
                         <li class="level1"><a href="../../layout-2/red/index.jsp"><span> Home Version 2</span></a> </li>
                         <li class="level1"><a href="../../layout-1/aqua/index.jsp"><span>Aqua</span></a> </li>
                         <li class="level1"><a href="../../layout-1/orange/index.jsp"><span>Orange</span></a> </li>
                         <li class="level1"><a href="../../layout-1/red/index.jsp"><span>Red</span></a> </li>
                         <li class="level1"><a href="../../layout-1/yellow/index.jsp"><span>Yellow</span></a> </li>
-                         </ul> -->
+                         </ul>
                     </li>
                     <li class="level0 nav-1 level-top first parent"> <a href="grid.html" class="level-top"> <span>Women</span> </a>
                       <ul class="level0">
@@ -433,13 +414,15 @@
 
           </li>
           
-       <%
+          
+        <%
                 ResultSet type_rs = sqltool.get_all_type();
                 while(type_rs.next()){
                 out.println("<li class=\"level0 nav-8 level-top\"> <a href=\"grid.jsp?type="+type_rs.getInt("typeID")+"\" class=\"level-top\"> <span>"+type_rs.getString("commodityTypeName")+"</span> </a> </li>");
                 }
         
         %> 
+
           
         </ul>
         <div id="form-search" class="search-bar">
@@ -453,268 +436,388 @@
     </div>
   </nav>
   <!-- end nav -->
-  <!-- Slider -->
-  <div class="slider-section">
+  
+  <!-- breadcrumbs -->
+  <div class="breadcrumbs">
     <div class="container">
       <div class="row">
-        <aside class="cat-block pro-block col-xs-12 col-sm-12 col-md-5">
-          <div class="pro1-block">
-            <ul class="top-cat-box">
-              <li>
-                <div> <img  alt="women image" src="images/women-img.png"> </div>
-                <h2>Women</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur. </p>
-                <a href="#">Buy Now</a> </li>
-              <li>
-                <div> <img  alt="men image" src="images/men-img.png"> </div>
-                <h2>Men</h2>
-                <p>Consectetur adipiscing elit. </p>
-                <a href="#">Buy Now</a> </li>
-              <li>
-                <div> <img  alt="electronics image" src="images/electronics-img.png"> </div>
-                <h2>Electronics</h2>
-                <p>Voluptatem accusantium doloremque</p>
-                <a href="#">Buy Now</a> </li>
-              <li>
-                <div> <img  alt="furniture image" src="images/furniture-img.png"> </div>
-                <h2>Furniture</h2>
-                <p>eaque ipsa quae ab illo inventore </p>
-                <a href="#">Buy Now</a> </li>
-            </ul>
-          </div>
-          <!-- //showcase-right -->
-        </aside>
-        <div class="slider-intro col-lg-7 col-sm-12 col-md-7">
-          <div class="the-slideshow slideshow-wrapper">
-            <ul style="overflow: hidden;" class="slideshow">
-              <li class="slide">
-                <p><a href="#"> <img src="images/banner-img.jpg" alt="banner-img"></a></p>
-                <div class="caption light1 top-right">
-                  <div class="caption-inner">
-                    <p class="heading">Women Collection 2014</p>
-                    <p class="heading1">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    <p class="intro-btn"><a  href="#" title="Click to see all features">Shop Now</a> </p>
-                  </div>
-                </div>
-              </li>
-              <li class="slide">
-                <p><a href="#"> <img src="images/banner-img.jpg" alt="banner-img"></a></p>
-                <div class="caption light1 top-right">
-                  <div class="caption-inner">
-                    <h2 class="heading">You like this theme?</h2>
-                    <p class="heading1">Pellentesque habitant morbi tristique senectus </p>
-                    <p class="intro-btn"><a  href="#" title="Click to see all features">Buy Now</a> </p>
-                  </div>
-                </div>
-              </li>
-              <li class="slide">
-                <p><a title="#" href="#"> <img src="images/banner-img.jpg" alt="banner-img"> </a></p>
-                <div class="caption light1 top-right">
-                  <div class="caption-inner">
-                    <p class="heading">Responsive Layout</p>
-                    <p class="intro-btn"><a  href="#" title="Click to see all features">Buy Now</a> </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <a href="#" id="home-slides-prev" class="backward browse-button">previous</a> <a href="#" id="home-slides-next" class="forward browse-button">next</a>
-            <div id="home-slides-pager" class="tab-pager tab-pager-img tab-pager-ring-lgray"></div>
-          </div>
-        </div>
+        <ul>
+          <li class="home"> <a href="index.jsp" title="Go to Home Page">Home</a><span>&raquo;</span></li>
+          <!-- <li class=""> <a href="grid.html" title="Go to Home Page">Women</a><span>&raquo;</span></li> -->
+          <li class="category13"><strong>Tops &amp;
+          <%
+          if(request.getParameter("type")!=null && Integer.parseInt(request.getParameter("type"))>0){
+            int type=Integer.parseInt(request.getParameter("type"));
+            List<Integer> result_item;
+            result_item = sqltool.get_type_top_item(type);
+            String[] item_detial;
+            item_detial=sqltool.getitem(result_item.get(0)).split("&");
+            out.println(item_detial[5]);
+          }else
+            out.println("ALL");
+
+         %>
+
+          </strong></li>
+        </ul>
       </div>
     </div>
   </div>
-  <!-- end Slider -->
-  <!-- offer banner section -->
-  <div class="offer-banner-section">
-    <div class="container">
+  <!-- End breadcrumbs --> 
+  <!-- Two columns content -->
+  <div class="main-container col2-left-layout">
+    <div class="main container">
       <div class="row">
-        <div class="newsletter-wrap">
-          <div class="newsletter">
-            <form action="#" method="post" id="newsletter-validate-detail">
-              <div>
-                <h4><span>Amaze newsletter</span></h4>
-                <input type="text" name="email" id="newsletter1" title="Sign up for our newsletter" class="input-text required-entry validate-email" placeholder="Enter your email address">
-                <button type="submit" title="Subscribe" class="subscribe"><span>Subscribe</span></button>
+        <section class="col-sm-9 col-sm-push-3">
+        <div class="col-main">
+          <div class="category-title">
+            <h1>Tops &amp;
+            <%
+          if(request.getParameter("type")!=null && Integer.parseInt(request.getParameter("type"))>0){
+            int type=Integer.parseInt(request.getParameter("type"));
+            List<Integer> result_item;
+            result_item = sqltool.get_type_top_item(type);
+            String[] item_detial;
+            item_detial=sqltool.getitem(result_item.get(0)).split("&");
+            out.println(item_detial[5]);
+          }else
+            out.println("ALL");
+
+         %>
+            
+            </h1>
+          </div>
+          <div class="category-description std">
+            <div class="slider-items-products">
+              <div id="category-desc-slider" class="product-flexslider hidden-buttons">
+                <div class="slider-items slider-width-col1"> 
+                  
+                  <!-- Item -->
+                  <div class="item"> <a href="#x"><img alt="women_banner" src="http://lvyou168.cn/travel/chicoutletshopping/images/kv_1.jpg"></a>
+                    <div class="cat-img-title cat-bg cat-box">
+                      <h2 class="cat-heading">Category Banner</h2>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                  </div>
+                  <!-- End Item --> 
+                  
+                  <!-- Item -->
+                  <div class="item"> <a href="#x"><img alt="women_banner" src="http://lvyou168.cn/travel/chicoutletshopping/images/lzv_1.jpg"></a> </div>
+                  <!-- End Item --> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="category-products">
+            <div class="toolbar">
+              <div class="sorter">
+                <div class="view-mode"> <span title="Grid" class="button button-active button-grid">Grid</span><a href="javascript:change_list_grid();" title="List" class="button button-list">List</a> </div>
+              </div>
+              <div id="sort-by">
+                <label class="left">Sort By: </label>
+                <ul>
+                  <li><a href="#">Position<span class="right-arrow"></span></a>
+                    <ul>
+                      <li><a href="#">Name</a></li>
+                      <li><a href="#">Price</a></li>
+                      <li><a href="#">Position</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <a class="button-asc left" href="#" title="Set Descending Direction"><span style="color:#999;font-size:11px;" class="glyphicon glyphicon-arrow-up"></span></a> </div>
+              <div class="pager">
+                <div id="limiter">
+                  <label>View: </label>
+                  <ul>
+                    <li><a href="#">15<span class="right-arrow"></span></a>
+                      <ul>
+                        <li><a href="#">20</a></li>
+                        <li><a href="#">30</a></li>
+                        <li><a href="#">35</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="pages">
+                  <label>Page:</label>
+                  <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <ul class="products-grid">
+            
+            
+            
+            
+         <!--   该类型销量最高的   -->
+         <%
+            int type=0;
+            if(request.getParameter("type")!=null){
+                type=Integer.parseInt(request.getParameter("type"));
+            }
+            int item_page=1;
+            if(request.getParameter("page")!=null){
+                item_page=Integer.parseInt(request.getParameter("page"));
+            }
+            item_page*=18;   //每页显示18个
+            
+            List<Integer> result_item;
+            if(type < 1)
+                result_item = sqltool.get_top_item();
+            else
+                result_item = sqltool.get_type_top_item(type);
+            String[] item_detial;
+            for (int i=0; i<Math.min(result_item.size(),item_page); i++) {
+                if(i >= item_page-18){
+                    item_detial=sqltool.getitem(result_item.get(i)).split("&");
+                    out.println("<li class=\"item col-lg-4 col-md-3 col-sm-4 col-xs-12\">  <div class=\"item-inner\">    <div class=\"product-block\"><div class=\"product-image\"> <a href=\"item.jsp?id="+item_detial[0]+"\">  <figure class=\"product-display\">    <div class=\"sale-label sale-top-left\">Sale</div>    <img style=\"height:150px;width:auto;margin:0 auto\" src=\""+item_detial[4]+"\" class=\"lazyOwl product-mainpic\" alt=\"Sample Product\" style=\"display: block;\"> <img class=\"product-secondpic\" alt=\" Sample Product\" src=\""+item_detial[4]+"\"> </figure>  </a> </div><div class=\"product-meta\">  <div class=\"product-action\"> <a class=\"addcart\" href=\"javascript:addcart_id("+item_detial[0]+");\"> <i class=\"icon-shopping-cart\">&nbsp;</i> Add to cart </a>     <a class=\"wishlist\" href=\"#\"> <i class=\"icon-heart\">&nbsp;</i> </a>       <a class=\"quickview\" href=\"quick.jsp?id="+item_detial[0]+"\"> <i class=\"icon-zoom\">&nbsp;</i> </a> </div></div>      </div>    <div class=\"item-info\">      <div class=\"info-inner\"><div class=\"item-title\"> <a href=\"item.jsp?id="+item_detial[0]+"\" title=\"Retis lapen casen\">"+item_detial[1]+"</a> </div><div class=\"item-content\">    <div class=\"item-price\">    <div class=\"price-box\"> <span class=\"regular-price\" > <span class=\"price\">$"+item_detial[2]+"</span> </span> </div>  </div>						  <div class=\"rating\">    <div class=\"ratings\">      <div class=\"rating-box\"><div class=\"rating\" style=\"width:80%\"></div>      </div>      <p class=\"rating-links\"> <a href=\"#\">1 Review(s)</a> <span class=\"separator\">|</span> <a href=\"#\">Add Review</a> </p>    </div>  </div></div>      </div>    </div>  </div></li>");
+                }
+                
+             }
+
+            
+            
+            
+         %> 
+
+				
+        </ul>
+          </div>
+		  </div>
+        </section>
+        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
+          <div class="side-nav-categories">
+            <div class="block-title"> Categories </div>
+            <div class="box-content box-category">
+              <ul id="magicat">
+          <%
+                type_rs = sqltool.get_all_type();
+                while(type_rs.next()){
+                out.println("<li class=\"level0- level0\"> <span class=\"magicat-cat\"><a href=\"grid.jsp?type="+type_rs.getInt("typeID")+"\"><span>"+type_rs.getString("commodityTypeName")+"</span></a></span> </li>");
+                }
+        
+        %> 
+
+              </ul>
+            </div>
+          </div>
+          <div class="block block-layered-nav">
+            <div class="block-title">Shop By</div>
+            <div class="block-content">
+              <p class="block-subtitle">Shopping Options</p>
+              <dl id="narrow-by-list">
+                <dt class="odd">Price</dt>
+                <dd class="odd">
+                  <ol>
+                    <li> <a href="#"><span class="price">$0.00</span> - <span class="price">$99.99</span></a> (6) </li>
+                    <li> <a href="#"><span class="price">$100.00</span> and above</a> (6) </li>
+                  </ol>
+                </dd>
+                <dt class="even">Manufacturer</dt>
+                <dd class="even">
+                  <ol>
+                    <li> <a href="#">TheBrand</a> (9) </li>
+                    <li> <a href="#">Company</a> (4) </li>
+                    <li> <a href="#">LogoFashion</a> (1) </li>
+                  </ol>
+                </dd>
+                <dt class="odd">Color</dt>
+                <dd class="odd">
+                  <ol>
+                    <li> <a href="#">Green</a> (1) </li>
+                    <li> <a href="#">White</a> (5) </li>
+                    <li> <a href="#">Black</a> (5) </li>
+                    <li> <a href="#">Gray</a> (4) </li>
+                    <li> <a href="#">Dark Gray</a> (3) </li>
+                    <li> <a href="#">Blue</a> (1) </li>
+                  </ol>
+                </dd>
+                <dt class="last even">Size</dt>
+                <dd class="last even">
+                  <ol>
+                    <li> <a href="#">S</a> (6) </li>
+                    <li> <a href="#">M</a> (6) </li>
+                    <li> <a href="#">L</a> (4) </li>
+                    <li> <a href="#">XL</a> (4) </li>
+                  </ol>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="block block-cart">
+            <div class="block-title ">My Cart</div>
+            <div class="block-content">
+              <div class="summary">
+                <p class="amount">Welcome !</p>
+                <p class="subtotal"> <span class="label">Cart Subtotal:</span> <span class="price">$<% out.println(all_money); %></span> </p>
+              </div>
+              <div class="ajax-checkout">
+                <button type="submit" title="Submit" class="button button-checkout"><span>Checkout</span></button>
+              </div>
+              <p class="block-subtitle">Recently added item(s) </p>
+              <ul>
+              
+               <%
+                         if(session.getAttribute("username")!=null){
+                                String username = session.getAttribute("username").toString();
+                                String user_cart=username+"_cart";
+                                String user_number=username+"_number"; 
+                                
+                                 if(application.getAttribute(user_cart) == null){
+                                    List<String> list = new ArrayList<String>();
+                                    application.setAttribute(user_cart,list);
+                                    }
+                                 if(application.getAttribute(user_number) == null){
+                                    HashMap<String , Integer> map = new HashMap<String , Integer>();
+                                    application.setAttribute(user_number,map);
+                                    }
+                                 
+                                List<String> cart = (List<String>)application.getAttribute(user_cart);
+                                HashMap<String , Integer> number_map = (HashMap<String , Integer>)application.getAttribute(user_number);
+                                
+                                String item_result="";
+
+                                String item_id;
+                                
+                                for (int i=0; i<cart.size(); i++) {
+                                    item_id = cart.get(i);
+                                    item_result = sqltool.getitem(Integer.parseInt(item_id));
+                                    item_detial = item_result.split("&");
+                                    
+                                    double real_price = Double.parseDouble(item_detial[2]) * Double.parseDouble(item_detial[3]);
+                                    all_money += real_price*number_map.get(item_id);
+                                    out.println("<li class=\"item\"> <a class=\"product-image\" title=\"Fisher-Price Bubble Mower\" href=\"item.jsp?id="+item_detial[0]+"\"><img width=\"80\" alt=\"product-image\" src=\""+item_detial[4]+"\"></a>  <div class=\"product-details\">    <div class=\"access\"> <a class=\"btn-remove1\" title=\"Remove This Item\" href=\"javascript:delcart("+item_detial[0]+");\"> <span class=\"icon\"></span> Remove </a> </div>    <p class=\"product-name\"> <a href=\"item.jsp?id="+item_detial[0]+"\">"+item_detial[1]+"</a> </p>  <strong>1</strong> x <span class=\"price\">$"+real_price+"</span> </div></li>");
+                                }
+
+                         }
+                     %>
+              
+
+                
+                
+                
+              </ul>
+            </div>
+          </div>
+          <div class="block block-subscribe">
+        <div class="block-title">Newsletter</div>
+        <form id="newsletter-validate-detail" method="post" action="http://www.magikcommerce.com//newsletter/subscriber/new/">
+          <div class="block-content">
+            <div class="form-subscribe-header"> Sign up for our newsletter:</div>
+            <input type="text" placeholder="Enter your email address" class="input-text required-entry validate-email" title="" id="newsletter" name="email">
+            <div class="actions">
+              <button class="button button-subscribe" title="Submit" type="submit"><span>Subscribe</span></button>
+            </div>
+          </div>
+        </form>
+      </div>
+          <div class="block block-compare">
+            <div class="block-title ">Compare Products (2)</div>
+            <div class="block-content">
+              <ol id="compare-items">
+                <li class="item odd">
+                  <input type="hidden" class="compare-item-id" value="2173">
+                  <a href="#" title="Remove This Item" class="btn-remove1"></a> <a class="product-name" href="#"> Sofa with Box-Edge Polyester Wrapped Cushions</a> </li>
+                <li class="item last even">
+                  <input type="hidden" class="compare-item-id" value="2174">
+                  <a href="#" title="Remove This Item" class="btn-remove1"></a> <a class="product-name" href="#"> Sofa with Box-Edge Down-Blend Wrapped Cushions</a> </li>
+              </ol>
+              <div class="ajax-checkout">
+                <button class="button button-compare" title="Submit" type="submit"><span>Compare</span></button>
+                <button class="button button-clear" title="Submit" type="submit"><span>Clear</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="block block-list block-viewed">
+            <div class="block-title"> Recently Viewed </div>
+            <div class="block-content">
+              <ol id="recently-viewed-items">
+                <li class="item odd">
+                  <p class="product-name"><a href="#"> Armchair with Box-Edge Upholstered Arm</a></p>
+                </li>
+                <li class="item even">
+                  <p class="product-name"><a href="#"> Pearce Upholstered Slee pere</a></p>
+                </li>
+                <li class="item last odd">
+                  <p class="product-name"><a href="#"> Sofa with Box-Edge Down-Blend Wrapped Cushions</a></p>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="block block-poll">
+            <div class="block-title">Community Poll </div>
+            <form onSubmit="return validatePollAnswerIsSelected();" method="post" action="#" id="pollForm">
+              <div class="block-content">
+                <p class="block-subtitle">What is your favorite Magento feature?</p>
+                <ul id="poll-answers">
+                  <li class="odd">
+                    <input type="radio" value="5" id="vote_5" class="radio poll_vote" name="vote">
+                    <span class="label">
+                    <label for="vote_5">Layered Navigation</label>
+                    </span> </li>
+                  <li class="even">
+                    <input type="radio" value="6" id="vote_6" class="radio poll_vote" name="vote">
+                    <span class="label">
+                    <label for="vote_6">Price Rules</label>
+                    </span> </li>
+                  <li class="odd">
+                    <input type="radio" value="7" id="vote_7" class="radio poll_vote" name="vote">
+                    <span class="label">
+                    <label for="vote_7">Category Management</label>
+                    </span> </li>
+                  <li class="last even">
+                    <input type="radio" value="8" id="vote_8" class="radio poll_vote" name="vote">
+                    <span class="label">
+                    <label for="vote_8">Compare Products</label>
+                    </span> </li>
+                </ul>
+                <div class="actions">
+                  <button class="button button-vote" title="Vote" type="submit"><span>Vote</span></button>
+                </div>
               </div>
             </form>
           </div>
-        </div>
-        <%
-            type_rs = sqltool.get_all_type();
-            int i=0;
-            while(type_rs.next()){
-                out.println("<div class=\"col-lg-3 col-sm-3 col-xs-12\"><div class=\"col\"><img style=\"height:200px\"  src=\""+type_rs.getString("typepicture")+"\" alt=\"offer banner\"></div></div>");
-                if(i++==3)
-                    break;
-            }
-        
-        %>
-        <!--
-        <div class="col-lg-3 col-sm-3 col-xs-12">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        <div class="col-lg-3 col-sm-3 col-xs-12">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        <div class="col-lg-3 col-sm-3 col-xs-12">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        <div class="col-lg-3 col-sm-3 col-xs-12 last">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        -->
-        
+          <div class="block block-tags">
+            <div class="block-title"> Popular Tags</div>
+            <div class="block-content">
+              <ul class="tags-list">
+                <li><a style="font-size:98.3333333333%;" href="#tagId/23/">Camera</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/109/">Hohoho</a></li>
+                <li><a style="font-size:145%;" href="#tagId/27/">SEXY</a></li>
+                <li><a style="font-size:75%;" href="#tagId/61/">Tag</a></li>
+                <li><a style="font-size:110%;" href="#tagId/29/">Test</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/17/">bones</a></li>
+                <li><a style="font-size:110%;" href="#tagId/12/">cool</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/184/">cool t-shirt</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/173/">crap</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/41/">good</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/16/">green</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/5/">hip</a></li>
+                <li><a style="font-size:75%;" href="#tagId/51/">laptop</a></li>
+                <li><a style="font-size:75%;" href="#tagId/20/">mobile</a></li>
+                <li><a style="font-size:75%;" href="#tagId/70/">nice</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/42/">phone</a></li>
+                <li><a style="font-size:98.3333333333%;" href="#tagId/30/">red</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/28/">tight</a></li>
+                <li><a style="font-size:75%;" href="#tagId/2/">trendy</a></li>
+                <li><a style="font-size:86.6666666667%;" href="#tagId/4/">young</a></li>
+              </ul>
+              <div class="actions"> <a class="view-all" href="#">View All Tags</a> </div>
+            </div>
+          </div>
+          <div class="block block-banner"><a href="#"><img src="images/block-banner.png" alt="block-banner"></a></div>
+        </aside>
       </div>
     </div>
   </div>
-  <!-- end banner section -->
-  <div class="service-section">
-    <div class="container">
-      <div class="row">
-        <div id="store-messages">
-          <div class="col-md-4 col-xs-12 col-sm-4"><i class="icon-refresh">&nbsp;</i>
-            <div class="message"> <span><strong>Return &amp; Exchange</strong> in 3 working days </span>Lorem ipsum dolor sit amet, consectetur adipiscing. </div>
-          </div>
-          <div class="col-md-4 col-xs-12 col-sm-4"><i class="icon-truck">&nbsp;</i>
-            <div class="message"><span><strong>Free Shipping</strong> order over $99</span>Lorem ipsum dolor sit amet, consectetur adipiscing. </div>
-          </div>
-          <div class="col-md-4 col-xs-12 col-sm-4"><i class="icon-discount">&nbsp;</i>
-            <div class="message"><span><strong>50% Off</strong> on all products</span>Lorem ipsum dolor sit amet, consectetur adipiscing. </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- main container -->
-  <section class="main-container col1-layout home-content-container">
-    <div class="container">
-      <div class="std">
-        <div class="best-seller-pro wow bounceInUp animated">
-          <div class="slider-items-products">
-            <div class="new_title center">
-              <h2>Best Seller</h2>
-            </div>
-            <div id="best-seller-slider" class="product-flexslider hidden-buttons">
-              <div class="slider-items slider-width-col4">
-
-            <%
-                List<Integer> commodity=sqltool.get_top_item();
-                String[] item_detial;
-                for (i=0; i<Math.min(commodity.size(),8); i++) {
-                    item_detial=sqltool.getitem(commodity.get(i)).split("&");
-                    out.println("<div class=\"item\">  <div class=\"item-inner\">    <div class=\"product-block\">      <div class=\"product-image\"> <a href=\"item.jsp?id="+item_detial[0]+"\">        <figure class=\"product-display\">          <div class=\"sale-label sale-top-left\">Sale</div>          <img style=\"height:150px;width:auto;margin:0 auto\" src=\""+item_detial[4]+"\" class=\"lazyOwl product-mainpic\" alt=\"product-image\" style=\"display: block;\"> <img class=\"product-secondpic\" alt=\"product-image\" src=\""+item_detial[4]+"\"> </figure>        </a> </div>      <div class=\"product-meta\">        <div class=\"product-action\"> <a class=\"addcart\" href=\"javascript:addcart_id("+item_detial[0]+");\"> <i class=\"icon-shopping-cart\">&nbsp;</i> Add to cart </a> <a class=\"wishlist\" href=\"#\"> <i class=\"icon-heart\">&nbsp;</i> </a> <a href=\"quick.jsp?id="+item_detial[0]+"\" class=\"quickview\"> <i class=\"icon-zoom\">&nbsp;</i> </a> </div>      </div>    </div>    <div class=\"item-info\">      <div class=\"info-inner\">        <div class=\"item-title\"> <a href=\"product_detail.html\" title=\"Retis lapen casen\"> "+item_detial[1]+"</a> </div>        <div class=\"item-content\">          <div class=\"item-price\">            <div class=\"price-box\"> <span class=\"regular-price\"> <span class=\"price\">$"+item_detial[2]+"</span> </span> </div>          </div>          <div class=\"rating\">            <div class=\"ratings\">              <div class=\"rating-box\"><div class=\"rating\" style=\"width:80%\"></div>              </div>              <p class=\"rating-links\"> <a href=\"#\">1 Review(s)</a> <span class=\"separator\">|</span> <a href=\"#\">Add Review</a> </p>            </div>          </div>        </div>      </div>    </div>  </div></div>");
-                    }
-
-
-            %>
-
-
-              <!--
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="product-block">
-                      <div class="product-image"> <a href="product_detail.html">
-                        <figure class="product-display">
-                          <div class="sale-label sale-top-left">Sale</div>
-                          <img src="products-images/product1.jpg" class="lazyOwl product-mainpic" alt="product-image" style="display: block;"> <img class="product-secondpic" alt="product-image" src="products-images/product1.jpg"> </figure>
-                        </a> </div>
-                      <div class="product-meta">
-                        <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a href="quick_view.html" class="quickview"> <i class="icon-zoom">&nbsp;</i> </a> </div>
-                      </div>
-                    </div>
-                    <div class="item-info">
-                      <div class="info-inner">
-                        <div class="item-title"> <a href="product_detail.html" title="Retis lapen casen"> Sample Product</a> </div>
-                        <div class="item-content">
-                          <div class="item-price">
-                            <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                          </div>
-                          <div class="rating">
-                            <div class="ratings">
-                              <div class="rating-box">
-                                <div class="rating" style="width:80%"></div>
-                              </div>
-                              <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                -->
-                
-                
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Featured Slider -->
-        <div class="featured-pro">
-          <div class="slider-items-products">
-            <div class="title col-lg-6">
-              <div class="new_title center">
-                <h2><span>Lastest Products</span></h2>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra tristique eros dignissim venenatis. Nam et dolor id arcu efficitur tincidunt quis non nisi. Duis commodo pellentesque quam, id mollis ligula dictum id. Morbi cursus consectetur magna a egestas. Sed eu sagittis leo. Mauris euismod dapibus nisl, at euismod nunc commodo vel. Nulla semper non nisi in placerat. Aenean at nisl eu odio ullamcorper varius non ac ante. Quisque dictum, felis lobortis faucibus ornare, enim mi mollis ex, ac vestibulum neque nibh at nisi. </p>
-              <a title="Subscribe" class="view-all" href="grid.jsp"><span>View All Products</span></a> </div>
-            <div id="featured-slider" class="product-flexslider hidden-buttons col-lg-6">
-              <div class="slider-items slider-width-col4">
-              
-             <%
-                List<Integer> commodity_new=sqltool.get_new_item();
-                for (i=0; i<Math.min(commodity_new.size(),8); i++) {
-                    item_detial=sqltool.getitem(commodity_new.get(i)).split("&");
-                    double real_price = Double.parseDouble(item_detial[2]) * Double.parseDouble(item_detial[3]);
-                    out.println("<div class=\"item\">  <div class=\"item-inner\">    <div class=\"item-img\">      <div class=\"product-block\"><div class=\"product-image\"> <a href=\"item.jsp?id="+item_detial[0]+"\">  <figure class=\"product-display\">    <div class=\"new-label new-top-left\">New</div>    <img style=\"height:150px;width:auto;margin:0 auto\" src=\""+item_detial[4]+"\" class=\"lazyOwl product-mainpic\" alt=\"Product image\" style=\"display: block;\"> <img class=\"product-secondpic\" alt=\"Product image\" src=\""+item_detial[4]+"\"> </figure>  </a> </div><div class=\"product-meta\">  <div class=\"product-action\"> <a class=\"addcart\" href=\"javascript:addcart_id("+item_detial[0]+");\"> <i class=\"icon-shopping-cart\">&nbsp;</i> Add to cart </a> <a class=\"wishlist\" href=\"#\"> <i class=\"icon-heart\">&nbsp;</i> </a> <a href=\"quick.jsp?id="+item_detial[0]+"\" class=\"quickview\"> <i class=\"icon-zoom\">&nbsp;</i> </a> </div></div>      </div>    </div>    <div class=\"item-info\">      <div class=\"info-inner\"><div class=\"item-title\"> <a href=\"product_detail.html\" title=\"Ut tincidunt tortor\"> "+item_detial[1]+"</a> </div><div class=\"item-content\">  <div class=\"item-price\">    <div class=\"price-box\">      <p class=\"old-price\"> <span class=\"price-label\">Regular Price:</span> <span class=\"price\"  > $"+item_detial[2]+" </span> </p>      <p class=\"special-price\"> <span class=\"price-label\">Special Price</span> <span class=\"price\"  > $"+real_price+" </span> </p>    </div>  </div>  <div class=\"rating\">    <div class=\"ratings\">      <div class=\"rating-box\"><div class=\"rating\" style=\"width:50%\"></div>      </div>      <p class=\"rating-links\"> <a href=\"#\">1 Review(s)</a> <span class=\"separator\">|</span> <a href=\"#\">Add Review</a> </p>    </div>  </div></div>      </div>    </div>  </div></div>");
-               }
-
-
-            %>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Featured Slider -->
-      </div>
-    </div>
-  </section>
-  <!-- End main container -->
-  <!-- Latest Blog 
-  <section class="latest-blog container">
-    <div class="blog_post">
-      <div class="blog-title">
-        <h2><span>Latest Blog</span></h2>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="blog-img"> <img src="images/blog-img1.jpg" alt="blog image">
-          <div class="mask"> <a class="info" href="blog_detail.html">Read More</a> </div>
-        </div>
-        <h2><a href="blog_detail.html">Pellentesque habitant morbi</a> </h2>
-        <div class="post-date"><i class="icon-calendar"></i> Apr 10, 2014</div>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit  ... </p>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="blog-img"> <img src="images/blog-img1.jpg" alt="blog image">
-          <div class="mask"> <a class="info" href="blog_detail.html">Read More</a> </div>
-        </div>
-        <h2><a href="blog_detail.html">Pellentesque habitant morbi</a> </h2>
-        <div class="post-date"><i class="icon-calendar"></i> Apr 10, 2014</div>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit  ... </p>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="blog-img"> <img src="images/blog-img1.jpg" alt="blog image">
-          <div class="mask"> <a class="info" href="blog_detail.html">Read More</a> </div>
-        </div>
-        <h2><a href="blog_detail.html">Pellentesque habitant morbi</a> </h2>
-        <div class="post-date"><i class="icon-calendar"></i> Apr 10, 2014</div>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit  ... </p>
-      </div>
-    </div>
-  </section>
-   End Latest Blog -->
+  <!-- End Two columns content --> 
+  
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -810,7 +913,7 @@
               &nbsp;CA 12345  USA
               </address>
               <div class="phone-footer"><i class="phone-icon">&nbsp;</i> +1 800 123 1234</div>
-              <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:support@magikcommerce.com">support@magikcommerce.com</a>
+              <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:support@magikcommerce.com">support@magikcommerce.com</a> </div>
             </div>
           </div>
         </div>
@@ -826,7 +929,7 @@
           </div>
         </div>
       </div>
-    </div></div>
+    </div>
   </footer>
   <!-- End Footer -->
 </div>
@@ -928,13 +1031,15 @@
   </div>
   <!--right-side-content hidden1-->
 </div>
-<!-- JavaScript -->
+
+
+<!-- JavaScript --> 
 <script type="text/javascript" src="js/cart.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/slider.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/common.js"></script> 
+<script type="text/javascript" src="js/slider.js"></script> 
+<script type="text/javascript" src="js/owl.carousel.min.js"></script> 
 <script type="text/javascript">
     //<![CDATA[
 	jQuery(function() {
@@ -945,7 +1050,7 @@
 		});
 	});
     //]]>
-    </script>
+    </script> 
 <script>
 			new UISearch( document.getElementById( 'form-search' ) );
 		</script>

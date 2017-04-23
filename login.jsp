@@ -1,4 +1,4 @@
-﻿<%@ page language="java" import="java.util.*,com.mysqltool.*,java.sql.ResultSet,java.sql.SQLException" pageEncoding="UTF-8"%>
+﻿﻿<%@ page language="java"  import="java.util.*,java.sql.ResultSet,com.mysqltool.*,java.sql.SQLException"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,21 +10,27 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Amaze, premium HTML5 &amp; CSS3 template</title>
+
 <!-- Favicons Icon -->
 <link rel="icon" href="http://demo.magikthemes.com/skin/frontend/base/default/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="http://demo.magikthemes.com/skin/frontend/base/default/favicon.ico" type="image/x-icon" />
+
 <!-- Mobile Specific -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <!-- CSS Style -->
+
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-<link rel="stylesheet" href="css/slider.css" type="text/css">
 <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
 <link rel="stylesheet" href="css/owl.theme.css" type="text/css">
 <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
 <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
 <!-- Google Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,700,800,400,600' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
 <div class="page">
   <!-- Header -->
@@ -33,13 +39,13 @@
       <div class="row">
         <div class="col-lg-5 col-sm-4 col-md-5">
           <!-- Header Logo -->
-          <a class="logo" title="Magento Commerce" href="index.jsp"><img alt="Magento Commerce" src="images/logo.png"></a>
+          <a class="logo" title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="images/logo.png"></a>
           <!-- End Header Logo -->
         </div>
         <div class=" col-lg-7 col-sm-8 col-md-7 col-xs-12">
           <div class="header-top">
-            <div class="welcome-msg hidden-xs">Welcome To Hackerl's World! </div>
-            <!-- Header Language --
+            <div class="welcome-msg hidden-xs"> Default welcome msg! </div>
+            <!-- Header Language -->
             <div class="dropdown block-language-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#"> <img src="images/english.png" alt="language"> English <span class="caret"></span> </a>
               <ul class="dropdown-menu" role="menu">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/english.png" alt="language"> English </a></li>
@@ -47,7 +53,7 @@
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/german.png" alt="language"> German </a></li>
               </ul>
             </div>
-            !-- End Header Language -->
+            <!-- End Header Language -->
             <!-- Header Top Links -->
             <div class="toplinks">
               <div class="links">
@@ -66,21 +72,18 @@
                   </ul>
                 </div>
                 <!-- End Header Company -->
-                <div class="login">
-                      <%
+                <div class="login"><%
                 	    if(session.getAttribute("username") == null)
                             out.println("<a href=\"login.jsp\"><span class=\"hidden-xs\">Log In</span></a>");
                         else
                             out.println("<a href=\"#\"><span class=\"hidden-xs\">"+session.getAttribute("username")+"</span></a>");
-                        %> 
-                
-                </div>
+                        %> </div>
               </div>
             </div>
             <!-- End Header Top Links -->
           </div>
           <div class="cart_cur_block">
-            <!-- Header Currency --
+            <!-- Header Currency
             <div class="dropdown block-currency-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#"> USD <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> $ - Dollar </a></li>
@@ -95,8 +98,7 @@
                 <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#"><span class="hidden-xs">shopping cart</span></a></div>
                 <div>
                   <div style="display: none;" class="top-cart-content arrow_box">
-                    <div class="block-subtitle">
-                    <%
+                    <div class="block-subtitle"><%
                         if(session.getAttribute("username")!=null)
                             out.println("Recently added item(s)");
                         else
@@ -104,7 +106,7 @@
                         
                     %></div>
                     <ul id="cart-sidebar" class="mini-products-list">
-                    <%
+<%
                          double all_money=0;
                          if(session.getAttribute("username")!=null){
                                 String username = session.getAttribute("username").toString();
@@ -120,6 +122,7 @@
                                     application.setAttribute(user_number,map);
                                     }
                                  
+                                
                                 List<String> cart = (List<String>)application.getAttribute(user_cart);
                                 HashMap<String , Integer> number_map = (HashMap<String , Integer>)application.getAttribute(user_number);
                                 
@@ -134,33 +137,21 @@
                                     
                                     double real_price = Double.parseDouble(item_detial[2]) * Double.parseDouble(item_detial[3]);
                                     all_money += real_price*number_map.get(item_id);
-                                    out.println("<li class=\"item odd\"> <a href=\"item.jsp?id="+item_detial[0]+"\" title=\""+item_detial[1]+"\" class=\"product-image\"><img src=\""+item_detial[4]+"\" alt=\"Product image\" width=\"55\"></a><div class=\"product-details\"> <a id=\"del_node_"+item_detial[0]+"\" href=\"javascript:delcart("+item_detial[0]+");\" title=\"Remove This Item\" onClick=\"\" class=\"btn-remove1\">Remove This Item</a> <a class=\"btn-edit\" title=\"Edit item\" href=\"#\">Edit item</a><p class=\"product-name\"><a href=\"item.jsp?id="+item_detial[0]+"\">"+item_detial[1]+"</a> </p><strong>"+number_map.get(item_id)+"</strong> x <span class=\"price\">$"+real_price+"</span> </div></li>");
+                                    out.println("<li class=\"item odd\"> <a href=\"item.jsp?id="+item_detial[0]+"\" title=\""+item_detial[1]+"\" class=\"product-image\"><img src=\""+item_detial[4]+"\" alt=\"Product image\" width=\"55\"></a><div class=\"product-details\"> <a title=\"Remove This Item\" onClick=\"delcart("+item_detial[0]+");\" class=\"btn-remove1\">Remove This Item</a> <a class=\"btn-edit\" title=\"Edit item\" href=\"#\">Edit item</a><p class=\"product-name\"><a href=\"item.jsp?id="+item_detial[0]+"\">"+item_detial[1]+"</a> </p><strong>"+number_map.get(item_id)+"</strong> x <span class=\"price\">$"+real_price+"</span> </div></li>");
+
                                 }
 
                          }
+                    
+                    
                      %>
-                    <!--
-                      <li class="item odd"> <a href="product_detail.html" title="Skater Dress In Leaf Print" class="product-image"><img src="products-images/product1.jpg" alt="Product image" width="55"></a>
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a> <a class="btn-edit" title="Edit item" href="#">Edit item</a>
-                          <p class="product-name"><a href="product_detail.html">Sample Product</a> </p>
-                          <strong>1</strong> x <span class="price">$20.00</span> </div>
-                      </li>
-                      <li class="item even"> <a href="product_detail.html" title="Product layout: large content" class="product-image"><img src="products-images/product1.jpg" alt="Product image" width="55"></a>
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a> <a class="btn-edit" title="Edit item" href="#">Edit item</a>
-                          <p class="product-name"><a href="product_detail.html">Sample Product</a> </p>
-                          <strong>1</strong> x <span class="price">$230.00</span> </div>
-                      </li>
-                      <li class="item last odd"> <a href="product_detail.html" title="Skater Dress In Leaf Print" class="product-image"><img src="products-images/product1.jpg" alt="Product image" width="55"></a>
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="btn-remove1">Remove This Item</a><a class="btn-edit" title="Edit item" href="#">Edit item</a>
-                          <p class="product-name"><a href="product_detail.html">Sample Product</a> </p>
-                          <strong>2</strong> x <span class="price">$420.00</span> </div>
-                      </li>    
-                      -->
+
+
                     </ul>
-                    <div class="top-subtotal">Subtotal: <span class="price">$<% out.println(all_money); %></span></div>
+                    <div class="top-subtotal">Subtotal: <span class="price">$0.00</span></div>
                     <div class="actions">
-                      <a href="checkout.jsp"><button class="btn-checkout" type="button"><span>Checkout</span></button></a>
-                      <a href="cart.jsp"><button class="view-cart" type="button"><span>View Cart</span></button></a>
+                      <button class="btn-checkout" type="button"><span>Checkout</span></button>
+                      <button class="view-cart" type="button"><span>View Cart</span></button>
                     </div>
                   </div>
                 </div>
@@ -188,14 +179,14 @@
               <ul style="display:none;" class="submenu">
                 <li>
                   <ul class="topnav"><li class="level0 nav-6 level-top first parent"> <a class="level-top" href="index.jsp"> <span>Home</span> </a>
-                      <!--<ul class="level0">
-                        <li class="level1"><a href="../../layout-1/red/index.jsp"><span>Home Version 1</span></a> </li>
-                        <li class="level1"><a href="../../layout-2/red/index.jsp"><span> Home Version 2</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/aqua/index.jsp"><span>Aqua</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/orange/index.jsp"><span>Orange</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/red/index.jsp"><span>Red</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/yellow/index.jsp"><span>Yellow</span></a> </li>
-                         </ul> -->
+                      <ul class="level0">
+                        <li class="level1"><a href="../../layout-1/red/index.html"><span>Home Version 1</span></a> </li>
+                        <li class="level1"><a href="../../layout-2/red/index.html"><span> Home Version 2</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/aqua/index.html"><span>Aqua</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/orange/index.html"><span>Orange</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/red/index.html"><span>Red</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/yellow/index.html"><span>Yellow</span></a> </li>
+                         </ul>
                     </li>
                     <li class="level0 nav-1 level-top first parent"> <a href="grid.html" class="level-top"> <span>Women</span> </a>
                       <ul class="level0">
@@ -433,14 +424,14 @@
 
           </li>
           
-       <%
+
+          <%
                 ResultSet type_rs = sqltool.get_all_type();
                 while(type_rs.next()){
                 out.println("<li class=\"level0 nav-8 level-top\"> <a href=\"grid.jsp?type="+type_rs.getInt("typeID")+"\" class=\"level-top\"> <span>"+type_rs.getString("commodityTypeName")+"</span> </a> </li>");
                 }
         
         %> 
-          
         </ul>
         <div id="form-search" class="search-bar">
           <form id="search_mini_form" action="search_grid.jsp" method="get">
@@ -453,268 +444,71 @@
     </div>
   </nav>
   <!-- end nav -->
-  <!-- Slider -->
-  <div class="slider-section">
-    <div class="container">
-      <div class="row">
-        <aside class="cat-block pro-block col-xs-12 col-sm-12 col-md-5">
-          <div class="pro1-block">
-            <ul class="top-cat-box">
-              <li>
-                <div> <img  alt="women image" src="images/women-img.png"> </div>
-                <h2>Women</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur. </p>
-                <a href="#">Buy Now</a> </li>
-              <li>
-                <div> <img  alt="men image" src="images/men-img.png"> </div>
-                <h2>Men</h2>
-                <p>Consectetur adipiscing elit. </p>
-                <a href="#">Buy Now</a> </li>
-              <li>
-                <div> <img  alt="electronics image" src="images/electronics-img.png"> </div>
-                <h2>Electronics</h2>
-                <p>Voluptatem accusantium doloremque</p>
-                <a href="#">Buy Now</a> </li>
-              <li>
-                <div> <img  alt="furniture image" src="images/furniture-img.png"> </div>
-                <h2>Furniture</h2>
-                <p>eaque ipsa quae ab illo inventore </p>
-                <a href="#">Buy Now</a> </li>
-            </ul>
-          </div>
-          <!-- //showcase-right -->
-        </aside>
-        <div class="slider-intro col-lg-7 col-sm-12 col-md-7">
-          <div class="the-slideshow slideshow-wrapper">
-            <ul style="overflow: hidden;" class="slideshow">
-              <li class="slide">
-                <p><a href="#"> <img src="images/banner-img.jpg" alt="banner-img"></a></p>
-                <div class="caption light1 top-right">
-                  <div class="caption-inner">
-                    <p class="heading">Women Collection 2014</p>
-                    <p class="heading1">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    <p class="intro-btn"><a  href="#" title="Click to see all features">Shop Now</a> </p>
-                  </div>
-                </div>
-              </li>
-              <li class="slide">
-                <p><a href="#"> <img src="images/banner-img.jpg" alt="banner-img"></a></p>
-                <div class="caption light1 top-right">
-                  <div class="caption-inner">
-                    <h2 class="heading">You like this theme?</h2>
-                    <p class="heading1">Pellentesque habitant morbi tristique senectus </p>
-                    <p class="intro-btn"><a  href="#" title="Click to see all features">Buy Now</a> </p>
-                  </div>
-                </div>
-              </li>
-              <li class="slide">
-                <p><a title="#" href="#"> <img src="images/banner-img.jpg" alt="banner-img"> </a></p>
-                <div class="caption light1 top-right">
-                  <div class="caption-inner">
-                    <p class="heading">Responsive Layout</p>
-                    <p class="intro-btn"><a  href="#" title="Click to see all features">Buy Now</a> </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <a href="#" id="home-slides-prev" class="backward browse-button">previous</a> <a href="#" id="home-slides-next" class="forward browse-button">next</a>
-            <div id="home-slides-pager" class="tab-pager tab-pager-img tab-pager-ring-lgray"></div>
-          </div>
+  <script>
+  function change(){
+    if(document.getElementById("send2").innerHTML.indexOf("Login") >=0){
+    var form = document.getElementById("the_form");
+    form.action="adduser1.jsp";
+    var label = document.getElementById("type"); 
+    label.innerHTML = '<button id="send2" name="send" type="submit" class="button login"><span>Register</span></button><input type="radio" name="type" id="man" checked="checked" value="1">买家<input type="radio" name="type" id="woman" value="2">卖家';
+    }else{
+        var form = document.getElementById("the_form");
+        form.action="login1.jsp";
+        var label = document.getElementById("type"); 
+        label.innerHTML = '<button id="send2" name="send" type="submit" class="button login"><span>Login</span></button>';
+    }
+}
+  </script>
+  <section class="main-container col1-layout">
+    <div class="main container">
+      <div class="account-login">
+        <div class="page-title">
+          <h2>Login or Create an Account</h2>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- end Slider -->
-  <!-- offer banner section -->
-  <div class="offer-banner-section">
-    <div class="container">
-      <div class="row">
-        <div class="newsletter-wrap">
-          <div class="newsletter">
-            <form action="#" method="post" id="newsletter-validate-detail">
-              <div>
-                <h4><span>Amaze newsletter</span></h4>
-                <input type="text" name="email" id="newsletter1" title="Sign up for our newsletter" class="input-text required-entry validate-email" placeholder="Enter your email address">
-                <button type="submit" title="Subscribe" class="subscribe"><span>Subscribe</span></button>
+        <fieldset class="col2-set">
+          <legend>Login or Create an Account</legend>
+          <div class="col-1 new-users"><strong>New Customers</strong>
+            <div class="content">
+              <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+              <div class="buttons-set">
+                <button onClick="change();" class="button create-account" type="button"><span>Create an Account</span></button>
               </div>
-            </form>
-          </div>
-        </div>
-        <%
-            type_rs = sqltool.get_all_type();
-            int i=0;
-            while(type_rs.next()){
-                out.println("<div class=\"col-lg-3 col-sm-3 col-xs-12\"><div class=\"col\"><img style=\"height:200px\"  src=\""+type_rs.getString("typepicture")+"\" alt=\"offer banner\"></div></div>");
-                if(i++==3)
-                    break;
-            }
-        
-        %>
-        <!--
-        <div class="col-lg-3 col-sm-3 col-xs-12">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        <div class="col-lg-3 col-sm-3 col-xs-12">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        <div class="col-lg-3 col-sm-3 col-xs-12">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        <div class="col-lg-3 col-sm-3 col-xs-12 last">
-          <div class="col"><img src="images/offer-banner1.png" alt="offer banner"></div>
-        </div>
-        -->
-        
-      </div>
-    </div>
-  </div>
-  <!-- end banner section -->
-  <div class="service-section">
-    <div class="container">
-      <div class="row">
-        <div id="store-messages">
-          <div class="col-md-4 col-xs-12 col-sm-4"><i class="icon-refresh">&nbsp;</i>
-            <div class="message"> <span><strong>Return &amp; Exchange</strong> in 3 working days </span>Lorem ipsum dolor sit amet, consectetur adipiscing. </div>
-          </div>
-          <div class="col-md-4 col-xs-12 col-sm-4"><i class="icon-truck">&nbsp;</i>
-            <div class="message"><span><strong>Free Shipping</strong> order over $99</span>Lorem ipsum dolor sit amet, consectetur adipiscing. </div>
-          </div>
-          <div class="col-md-4 col-xs-12 col-sm-4"><i class="icon-discount">&nbsp;</i>
-            <div class="message"><span><strong>50% Off</strong> on all products</span>Lorem ipsum dolor sit amet, consectetur adipiscing. </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- main container -->
-  <section class="main-container col1-layout home-content-container">
-    <div class="container">
-      <div class="std">
-        <div class="best-seller-pro wow bounceInUp animated">
-          <div class="slider-items-products">
-            <div class="new_title center">
-              <h2>Best Seller</h2>
             </div>
-            <div id="best-seller-slider" class="product-flexslider hidden-buttons">
-              <div class="slider-items slider-width-col4">
+          </div>
+          <div class="col-2 registered-users"><strong>Registered Customers</strong>
+          <form id="the_form" method="post" action="login1.jsp">
+            <div class="content">
+              <p>If you have an account with us, please log in.</p>
+              <ul class="form-list">
+                <li>
+                  <label >Email Address <span class="required">*</span></label>
+                  <br>
+                  <input type="text" title="Email Address" class="input-text required-entry"  value="" name="username">
+                </li>
+                <li>
+                  <label for="pass">Password <span class="required">*</span></label>
+                  <br>
+                  <input type="password" title="Password" id="pass" class="input-text required-entry validate-password" name="password">
+                </li>
 
-            <%
-                List<Integer> commodity=sqltool.get_top_item();
-                String[] item_detial;
-                for (i=0; i<Math.min(commodity.size(),8); i++) {
-                    item_detial=sqltool.getitem(commodity.get(i)).split("&");
-                    out.println("<div class=\"item\">  <div class=\"item-inner\">    <div class=\"product-block\">      <div class=\"product-image\"> <a href=\"item.jsp?id="+item_detial[0]+"\">        <figure class=\"product-display\">          <div class=\"sale-label sale-top-left\">Sale</div>          <img style=\"height:150px;width:auto;margin:0 auto\" src=\""+item_detial[4]+"\" class=\"lazyOwl product-mainpic\" alt=\"product-image\" style=\"display: block;\"> <img class=\"product-secondpic\" alt=\"product-image\" src=\""+item_detial[4]+"\"> </figure>        </a> </div>      <div class=\"product-meta\">        <div class=\"product-action\"> <a class=\"addcart\" href=\"javascript:addcart_id("+item_detial[0]+");\"> <i class=\"icon-shopping-cart\">&nbsp;</i> Add to cart </a> <a class=\"wishlist\" href=\"#\"> <i class=\"icon-heart\">&nbsp;</i> </a> <a href=\"quick.jsp?id="+item_detial[0]+"\" class=\"quickview\"> <i class=\"icon-zoom\">&nbsp;</i> </a> </div>      </div>    </div>    <div class=\"item-info\">      <div class=\"info-inner\">        <div class=\"item-title\"> <a href=\"product_detail.html\" title=\"Retis lapen casen\"> "+item_detial[1]+"</a> </div>        <div class=\"item-content\">          <div class=\"item-price\">            <div class=\"price-box\"> <span class=\"regular-price\"> <span class=\"price\">$"+item_detial[2]+"</span> </span> </div>          </div>          <div class=\"rating\">            <div class=\"ratings\">              <div class=\"rating-box\"><div class=\"rating\" style=\"width:80%\"></div>              </div>              <p class=\"rating-links\"> <a href=\"#\">1 Review(s)</a> <span class=\"separator\">|</span> <a href=\"#\">Add Review</a> </p>            </div>          </div>        </div>      </div>    </div>  </div></div>");
-                    }
-
-
-            %>
-
-
-              <!--
-                <div class="item">
-                  <div class="item-inner">
-                    <div class="product-block">
-                      <div class="product-image"> <a href="product_detail.html">
-                        <figure class="product-display">
-                          <div class="sale-label sale-top-left">Sale</div>
-                          <img src="products-images/product1.jpg" class="lazyOwl product-mainpic" alt="product-image" style="display: block;"> <img class="product-secondpic" alt="product-image" src="products-images/product1.jpg"> </figure>
-                        </a> </div>
-                      <div class="product-meta">
-                        <div class="product-action"> <a class="addcart" href="shopping_cart.html"> <i class="icon-shopping-cart">&nbsp;</i> Add to cart </a> <a class="wishlist" href="wishlist.html"> <i class="icon-heart">&nbsp;</i> </a> <a href="quick_view.html" class="quickview"> <i class="icon-zoom">&nbsp;</i> </a> </div>
-                      </div>
-                    </div>
-                    <div class="item-info">
-                      <div class="info-inner">
-                        <div class="item-title"> <a href="product_detail.html" title="Retis lapen casen"> Sample Product</a> </div>
-                        <div class="item-content">
-                          <div class="item-price">
-                            <div class="price-box"> <span class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                          </div>
-                          <div class="rating">
-                            <div class="ratings">
-                              <div class="rating-box">
-                                <div class="rating" style="width:80%"></div>
-                              </div>
-                              <p class="rating-links"> <a href="#">1 Review(s)</a> <span class="separator">|</span> <a href="#">Add Review</a> </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                -->
                 
-                
-              </div>
+              </ul>
+              <p class="required">* Required Fields</p>
+              <div id="type" class="buttons-set">
+                <button id="send2" name="send" type="submit" class="button login"><span>Login</span></button></div>
             </div>
+          </form>
           </div>
-        </div>
-        <!-- Featured Slider -->
-        <div class="featured-pro">
-          <div class="slider-items-products">
-            <div class="title col-lg-6">
-              <div class="new_title center">
-                <h2><span>Lastest Products</span></h2>
-              </div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pharetra tristique eros dignissim venenatis. Nam et dolor id arcu efficitur tincidunt quis non nisi. Duis commodo pellentesque quam, id mollis ligula dictum id. Morbi cursus consectetur magna a egestas. Sed eu sagittis leo. Mauris euismod dapibus nisl, at euismod nunc commodo vel. Nulla semper non nisi in placerat. Aenean at nisl eu odio ullamcorper varius non ac ante. Quisque dictum, felis lobortis faucibus ornare, enim mi mollis ex, ac vestibulum neque nibh at nisi. </p>
-              <a title="Subscribe" class="view-all" href="grid.jsp"><span>View All Products</span></a> </div>
-            <div id="featured-slider" class="product-flexslider hidden-buttons col-lg-6">
-              <div class="slider-items slider-width-col4">
-              
-             <%
-                List<Integer> commodity_new=sqltool.get_new_item();
-                for (i=0; i<Math.min(commodity_new.size(),8); i++) {
-                    item_detial=sqltool.getitem(commodity_new.get(i)).split("&");
-                    double real_price = Double.parseDouble(item_detial[2]) * Double.parseDouble(item_detial[3]);
-                    out.println("<div class=\"item\">  <div class=\"item-inner\">    <div class=\"item-img\">      <div class=\"product-block\"><div class=\"product-image\"> <a href=\"item.jsp?id="+item_detial[0]+"\">  <figure class=\"product-display\">    <div class=\"new-label new-top-left\">New</div>    <img style=\"height:150px;width:auto;margin:0 auto\" src=\""+item_detial[4]+"\" class=\"lazyOwl product-mainpic\" alt=\"Product image\" style=\"display: block;\"> <img class=\"product-secondpic\" alt=\"Product image\" src=\""+item_detial[4]+"\"> </figure>  </a> </div><div class=\"product-meta\">  <div class=\"product-action\"> <a class=\"addcart\" href=\"javascript:addcart_id("+item_detial[0]+");\"> <i class=\"icon-shopping-cart\">&nbsp;</i> Add to cart </a> <a class=\"wishlist\" href=\"#\"> <i class=\"icon-heart\">&nbsp;</i> </a> <a href=\"quick.jsp?id="+item_detial[0]+"\" class=\"quickview\"> <i class=\"icon-zoom\">&nbsp;</i> </a> </div></div>      </div>    </div>    <div class=\"item-info\">      <div class=\"info-inner\"><div class=\"item-title\"> <a href=\"product_detail.html\" title=\"Ut tincidunt tortor\"> "+item_detial[1]+"</a> </div><div class=\"item-content\">  <div class=\"item-price\">    <div class=\"price-box\">      <p class=\"old-price\"> <span class=\"price-label\">Regular Price:</span> <span class=\"price\"  > $"+item_detial[2]+" </span> </p>      <p class=\"special-price\"> <span class=\"price-label\">Special Price</span> <span class=\"price\"  > $"+real_price+" </span> </p>    </div>  </div>  <div class=\"rating\">    <div class=\"ratings\">      <div class=\"rating-box\"><div class=\"rating\" style=\"width:50%\"></div>      </div>      <p class=\"rating-links\"> <a href=\"#\">1 Review(s)</a> <span class=\"separator\">|</span> <a href=\"#\">Add Review</a> </p>    </div>  </div></div>      </div>    </div>  </div></div>");
-               }
-
-
-            %>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Featured Slider -->
+        </fieldset>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
     </div>
   </section>
-  <!-- End main container -->
-  <!-- Latest Blog 
-  <section class="latest-blog container">
-    <div class="blog_post">
-      <div class="blog-title">
-        <h2><span>Latest Blog</span></h2>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="blog-img"> <img src="images/blog-img1.jpg" alt="blog image">
-          <div class="mask"> <a class="info" href="blog_detail.html">Read More</a> </div>
-        </div>
-        <h2><a href="blog_detail.html">Pellentesque habitant morbi</a> </h2>
-        <div class="post-date"><i class="icon-calendar"></i> Apr 10, 2014</div>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit  ... </p>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="blog-img"> <img src="images/blog-img1.jpg" alt="blog image">
-          <div class="mask"> <a class="info" href="blog_detail.html">Read More</a> </div>
-        </div>
-        <h2><a href="blog_detail.html">Pellentesque habitant morbi</a> </h2>
-        <div class="post-date"><i class="icon-calendar"></i> Apr 10, 2014</div>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit  ... </p>
-      </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="blog-img"> <img src="images/blog-img1.jpg" alt="blog image">
-          <div class="mask"> <a class="info" href="blog_detail.html">Read More</a> </div>
-        </div>
-        <h2><a href="blog_detail.html">Pellentesque habitant morbi</a> </h2>
-        <div class="post-date"><i class="icon-calendar"></i> Apr 10, 2014</div>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce sit  ... </p>
-      </div>
-    </div>
-  </section>
-   End Latest Blog -->
+  
   <!-- Footer -->
   <footer>
     <div class="container">
@@ -810,7 +604,7 @@
               &nbsp;CA 12345  USA
               </address>
               <div class="phone-footer"><i class="phone-icon">&nbsp;</i> +1 800 123 1234</div>
-              <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:support@magikcommerce.com">support@magikcommerce.com</a>
+              <div class="email-footer"><i class="email-icon">&nbsp;</i> <a href="mailto:support@magikcommerce.com">support@magikcommerce.com</a> </div>
             </div>
           </div>
         </div>
@@ -826,7 +620,7 @@
           </div>
         </div>
       </div>
-    </div></div>
+    </div>
   </footer>
   <!-- End Footer -->
 </div>
@@ -889,7 +683,7 @@
     <div class="slider-email active">
       <div id="messages_product_view"></div>
       <div id="formSuccess" style="display:none;">Your inquiry was submitted and will be responded to as soon as possible. Thank you for contacting us.</div>
-      <form id="contactForm1" method="post">
+      <form action="#" id="contactForm1" method="post">
         <div class="column sixty">
           <h2>TALK TO US</h2>
           <ul>
@@ -899,14 +693,15 @@
             </li>
             <li>
               <label>Email<em class="required">*</em></label>
-              <input name="email" id="email" title="Email" value="" class="input-text required-entry validate-email" type="text">
+              <input name="email"  title="Email" value="" class="input-text required-entry validate-email" type="text">
             </li>
             <li>
               <label>Telephone</label>
               <input name="telephone" id="telephone" title="Telephone" value="" class="input-text" type="text">
             </li>
           </ul>
-		  <p class="required">* Required Fields</p>
+
+            <p class="required">* Required Fields</p>
         </div>
         <!--column sixty-->
         <div class="column fourty last">
@@ -916,7 +711,7 @@
             <div class="textright">
               <input type="text" name="hideit" value="" style="display:none !important;">
               <button type="submit" title="Submit" class="button btn-sent"><span>Submit</span></button>
-              <img src="images/mgkloading1.gif" alt="loader" id="loader" style="display:none;"> </div>
+              <img src="images/mgkloading1.gif" id="loader" style="display:none;" alt=""> </div>
             <!--textright-->
           </div>
           <!--padding-->
@@ -928,13 +723,14 @@
   </div>
   <!--right-side-content hidden1-->
 </div>
-<!-- JavaScript -->
+
+<!-- JavaScript --> 
+<script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/common.js"></script> 
+<script type="text/javascript" src="js/slider.js"></script> 
 <script type="text/javascript" src="js/cart.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/slider.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/owl.carousel.min.js"></script> 
 <script type="text/javascript">
     //<![CDATA[
 	jQuery(function() {
@@ -945,7 +741,7 @@
 		});
 	});
     //]]>
-    </script>
+    </script> 
 <script>
 			new UISearch( document.getElementById( 'form-search' ) );
 		</script>

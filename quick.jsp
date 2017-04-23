@@ -111,7 +111,7 @@
                           <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
                         </div>
                       </div>
-                      <button onClick="addcart();" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
+                      <button onClick="quick_addcart();" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
                     </div>
                     <div class="email-addto-box">
                       <ul class="add-to-links">
@@ -140,55 +140,7 @@
 
 <!-- JavaScript --> 
 <script type="text/javascript" src="js/jquery.fancybox.js?v=2.1.5"></script>
-<script>
-function addcart(){
-    var num = document.getElementById("qty").value;
-    var id = document.getElementById("itemid").value;
-    var url = 'addcart.jsp?id='+id+'&num='+num;
-    var request=request_creat('GET',url)
-    request.onreadystatechange = function () {
-    if (request.readyState === 4) { 
-        if (request.status === 200) {
-            var meg = document.getElementById("success");
-            meg.innerHTML="Quantity:        "+request.responseText;
-
-        } else {
-            return 0;
-        }
-    } else {   } }
-    request.send();
-}
-
-function delcart(id){
-    var url = 'delcart.jsp?id='+id;
-    var request=request_creat('GET',url)
-    request.onreadystatechange = function () {
-    if (request.readyState === 4) { 
-        if (request.status === 200) {
-        location.replace(location.href);
-        } else {
-            return 0;
-        }
-    } else {   } }
-    request.send();
-}
-
-function request_creat(method,url){
-    var request;
-    if (window.XMLHttpRequest) {
-        request = new XMLHttpRequest();
-    } else {
-        request = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-    if(method=="POST"){
-    request.open("POST",url,true);
-    }
-    if(method=="GET"){
-    request.open("GET",url);
-    }
-    return request;
-}
-</script>
+<script type="text/javascript" src="js/cart.js"></script>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

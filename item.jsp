@@ -60,7 +60,7 @@
       <div class="row">
         <div class="col-lg-5 col-sm-4 col-md-5">
           <!-- Header Logo -->
-          <a class="logo" title="Magento Commerce" href="index.html"><img alt="Magento Commerce" src="images/logo.png"></a>
+          <a class="logo" title="Magento Commerce" href="index.jsp"><img alt="Magento Commerce" src="images/logo.png"></a>
           <!-- End Header Logo -->
         </div>
         <div class=" col-lg-7 col-sm-8 col-md-7 col-xs-12">
@@ -78,7 +78,7 @@
             <!-- Header Top Links -->
             <div class="toplinks">
               <div class="links">
-                <div class="myaccount"><a title="My Account" href="login.html"><span class="hidden-xs">My Account</span></a></div>
+                <div class="myaccount"><a title="My Account" href="login.jsp"><span class="hidden-xs">My Account</span></a></div>
                 <div class="wishlist"><a title="My Wishlist" href="wishlist.html"><span class="hidden-xs">Wishlist</span></a></div>
                 <div class="demo"><a href="blog.html" title="Blog"><span class="hidden-xs">Blog</span></a></div>
                 <!-- Header Company -->
@@ -95,7 +95,7 @@
                 <!-- End Header Company -->
                 <div class="login">                      <%
                 	    if(session.getAttribute("username") == null)
-                            out.println("<a href=\"login.html\"><span class=\"hidden-xs\">Log In</span></a>");
+                            out.println("<a href=\"login.jsp\"><span class=\"hidden-xs\">Log In</span></a>");
                         else
                             out.println("<a href=\"#\"><span class=\"hidden-xs\">"+session.getAttribute("username")+"</span></a>");
                         %> </div>
@@ -218,12 +218,12 @@
                 <li>
                   <ul class="topnav"><li class="level0 nav-6 level-top first parent"> <a class="level-top" href="index.jsp"> <span>Home</span> </a>
                       <ul class="level0">
-                        <li class="level1"><a href="../../layout-1/red/index.html"><span>Home Version 1</span></a> </li>
-                        <li class="level1"><a href="../../layout-2/red/index.html"><span> Home Version 2</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/aqua/index.html"><span>Aqua</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/orange/index.html"><span>Orange</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/red/index.html"><span>Red</span></a> </li>
-                        <li class="level1"><a href="../../layout-1/yellow/index.html"><span>Yellow</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/red/index.jsp"><span>Home Version 1</span></a> </li>
+                        <li class="level1"><a href="../../layout-2/red/index.jsp"><span> Home Version 2</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/aqua/index.jsp"><span>Aqua</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/orange/index.jsp"><span>Orange</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/red/index.jsp"><span>Red</span></a> </li>
+                        <li class="level1"><a href="../../layout-1/yellow/index.jsp"><span>Yellow</span></a> </li>
                          </ul>
                     </li>
                     <li class="level0 nav-1 level-top first parent"> <a href="grid.html" class="level-top"> <span>Women</span> </a>
@@ -459,297 +459,18 @@
         <!--End mobile-menu -->
         <ul id="nav" class="hidden-xs">
           <li id="nav-home" class="level0 parent drop-menu active"><a href="index.jsp"><span>Home</span> </a>
-            <ul class="level1" style="display: none;">
-              <li class="level1 first parent"><a href="../../layout-1/aqua/index.html"><span> Home Version 1</span></a> </li>
-              <li class="level1 parent"><a href="../../layout-2/aqua/index.html"><span> Home Version 2</span></a> </li>
-              <li class="level1 parent"><a href="../../layout-1/green/index.html"><span>Green</span></a> </li>
-              <li class="level1 parent"><a href="../../layout-1/orange/index.html"><span>Orange</span></a> </li>
-              <li class="level1 parent"><a href="../../layout-1/red/index.html"><span>Red</span></a> </li>
-              <li class="level1 parent"><a href="../../layout-1/yellow/index.html"><span>Yellow</span></a> </li>
-            </ul>
           </li>
-          <li class="level0 parent drop-menu"><a href="#"><span>Pages</span> </a>
-            <ul style="display: none;" class="level1">
-              <li class="level1 first"><a href="grid.html"><span>Grid</span></a></li>
-              <li class="level1 nav-10-2"> <a href="list.html"> <span>List</span> </a> </li>
-              <li class="level1 nav-10-3"> <a href="product_detail.html"> <span>Product Detail</span> </a> </li>
-              <li class="level1 nav-10-4"> <a href="shopping_cart.html"> <span>Shopping Cart</span> </a> </li>
-              <li class="level1 first parent"><a href="checkout.html"><span>Checkout</span></a>
-                <ul class="level2">
-                  <li class="level2 nav-2-1-1 first"><a href="checkout_method.html"><span>Checkout Method</span></a></li>
-                  <li class="level2 nav-2-1-5 last"><a href="checkout_billing_info.html"><span>Checkout Billing Info</span></a></li>
-                </ul>
-              </li>
-              <li class="level1 nav-10-4"> <a href="wishlist.html"> <span>Wishlist</span> </a> </li>
-              <li class="level1"> <a href="dashboard.html"> <span>Dashboard</span> </a> </li>
-              <li class="level1"> <a href="multiple_addresses.html"> <span>Multiple Addresses</span> </a> </li>
-              <li class="level1"> <a href="about_us.html"> <span>About Us</span> </a> </li>
-              <li class="level1"> <a href="compare.html"> <span>Compare</span> </a> </li>
-              <li class="level1"> <a href="delivery.html"> <span>Delivery</span> </a> </li>
-              <li class="level1"> <a href="faq.html"> <span>FAQ</span> </a> </li>
-              <li class="level1"> <a href="quick_view.html"> <span>Quick View</span> </a> </li>
-              <li class="level1"><a href="newsletter.html"><span>Newsletter</span></a> </li>
-              <li class="level1"><a href="contact_us.html"><span>Contact Us</span></a> </li>
-              <li class="level1"><a href="sitemap.html"><span>Sitemap</span></a> </li>
-              <li class="level1 first parent"><a href="blog.html"><span>Blog</span></a>
-                <ul class="level2">
-                  <li class="level2 nav-2-1-1 first"><a href="blog_detail.html"><span>Blog Detail</span></a></li>
-                </ul>
-              </li>
-              <li class="level1"><a href="404error.html"><span>404 Error Page</span></a> </li>
-            </ul>
-          </li>
-          <li class="level0 nav-5 level-top first"> <a href="grid.html" class="level-top"> <span>Women</span> <span class="category-label-hot">Hot</span></a>
-            <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center">
-                  <ul class="level0">
-                    <li class="level1 nav-6-1 first parent item"> <a href="grid.html"> <span>Styliest Bag </span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1 first"> <a href="grid.html"> <span>Clutch Handbags</span> </a> </li>
-                        <li class="level2 nav-6-1-2"> <a href="grid.html"> <span>Diaper Bags</span> </a> </li>
-                        <li class="level2 nav-6-1-2"> <a href="grid.html"> <span>Bags</span> </a> </li>
-                        <li class="level2 nav-6-1-3 last"> <a href="grid.html"> <span>Hobo Handbags</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-2 parent item"> <a href="grid.html"> <span>Material Bag</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-2-4 first"> <a href="grid.html"> <span>Beaded Handbags</span> </a> </li>
-                        <li class="level2 nav-6-2-5"> <a href="grid.html"> <span>Fabric Handbags</span> </a> </li>
-                        <li class="level2 nav-6-2-5"> <a href="grid.html"> <span>Handbags</span> </a> </li>
-                        <li class="level2 nav-6-2-6 last"> <a href="grid.html"> <span>Leather Handbags</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-3 parent item"> <a href="grid.html"> <span>Designer Bag</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-3-9 first"> <a href="grid.html"> <span>Flat Shoes</span> </a> </li>
-                        <li class="level2 nav-6-3-10"> <a href="grid.html"> <span>Flat Sandals</span> </a> </li>
-                        <li class="level2 nav-6-3-11"> <a href="grid.html"> <span>Boots</span> </a> </li>
-                        <li class="level2 nav-6-3-12 last"> <a href="grid.html"> <span>Heels</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-4 parent item"> <a href="grid.html"> <span>Cotton Bag</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-4-13 first"> <a href="grid.html"> <span>Bracelets</span> </a> </li>
-                        <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Necklaces &amp; Pendants</span> </a> </li>
-                        <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Pendants</span> </a> </li>
-                        <li class="level2 nav-6-4-15 last"> <a href="grid.html"> <span>Pins &amp; Brooches</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-5 last parent item"> <a href="grid.html"> <span>Swimwear</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-8-28 first"> <a href="grid.html"> <span>Swimsuits</span> </a> </li>
-                        <li class="level2 nav-6-8-29"> <a href="grid.html"> <span>Beach Clothing</span> </a> </li>
-                        <li class="level2 nav-6-8-29"> <a href="grid.html"> <span>Clothing</span> </a> </li>
-                        <li class="level2 nav-6-8-30 last"> <a href="grid.html"> <span>Bikinis</span> </a> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="nav-add">
-                <div class="push_item">
-                  <div class="push_img"> <a href="#"> <img alt="women_jwellery" src="images/women_jwellery.png"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <div class="push_item">
-                  <div class="push_img"> <a href="#"> <img alt="women_bag" src="images/women_jwellery.png"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <div class="push_item">
-                  <div class="push_img"> <a href="#"> <img alt="women_sandle" src="images/women_jwellery.png"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <div class="push_item push_item_last">
-                  <div class="push_img"> <a href="#"> <img alt="women_top" src="images/women_jwellery.png"> </a> </div>
-                  <div class="push_text">Lorem Ipsum is simply dummy text of the printing</div>
-                </div>
-                <br class="clear">
-              </div>
-            </div>
-          </li>
-          <li class="level0 nav-7 level-top parent"> <a href="grid.html" class="level-top"> <span>Men</span> </a>
-            <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center">
-                  <ul class="level0">
-                    <li class="level1 nav-7-1 first parent item"> <a href="grid.html"> <span>Gents Purses</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-3-15 first"> <a href="grid.html"> <span>Digital Cameras</span> </a> </li>
-                        <li class="level2 nav-7-3-16"> <a href="grid.html"> <span>Camcorders</span> </a> </li>
-                        <li class="level2 nav-7-3-17"> <a href="grid.html"> <span>Lenses</span> </a> </li>
-                        <li class="level2 nav-7-3-18"> <a href="grid.html"> <span>Filters</span> </a> </li>
-                        <li class="level2 nav-7-3-19 last"> <a href="grid.html"> <span>Tripods</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-7-3 parent item"> <a href="grid.html"> <span>Gents Purses</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-3-15 first"> <a href="grid.html"> <span>Digital Cameras</span> </a> </li>
-                        <li class="level2 nav-7-3-16"> <a href="grid.html"> <span>Camcorders</span> </a> </li>
-                        <li class="level2 nav-7-3-17"> <a href="grid.html"> <span>Lenses</span> </a> </li>
-                        <li class="level2 nav-7-3-18"> <a href="grid.html"> <span>Filters</span> </a> </li>
-                        <li class="level2 nav-7-3-19 last"> <a href="grid.html"> <span>Tripods</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-7-3 parent item"> <a href="grid.html"> <span>Gents Purses</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-3-15 first"> <a href="grid.html"> <span>Digital Cameras</span> </a> </li>
-                        <li class="level2 nav-7-3-16"> <a href="grid.html"> <span>Camcorders</span> </a> </li>
-                        <li class="level2 nav-7-3-17"> <a href="grid.html"> <span>Lenses</span> </a> </li>
-                        <li class="level2 nav-7-3-18"> <a href="grid.html"> <span>Filters</span> </a> </li>
-                        <li class="level2 nav-7-3-19 last"> <a href="grid.html"> <span>Tripods</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-7-4 parent item"> <a href="grid.html"> <span>Gifts</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-2-8 first"> <a href="grid.html"> <span>Headsets</span> </a> </li>
-                        <li class="level2 nav-7-2-9"> <a href="grid.html"> <span>Batteries</span> </a> </li>
-                        <li class="level2 nav-7-2-10"> <a href="grid.html"> <span>Screen Protectors</span> </a> </li>
-                        <li class="level2 nav-7-2-11"> <a href="grid.html"> <span>Memory Cards</span> </a> </li>
-                        <li class="level2 nav-7-2-14 last"> <a href="grid.html"> <span>Cases</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-7-4 last parent item"> <a href="grid.html"> <span>Accessories</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-2-8 first"> <a href="grid.html"> <span>Headsets</span> </a> </li>
-                        <li class="level2 nav-7-2-9"> <a href="grid.html"> <span>Batteries</span> </a> </li>
-                        <li class="level2 nav-7-2-10"> <a href="grid.html"> <span>Screen Protectors</span> </a> </li>
-                        <li class="level2 nav-7-2-11"> <a href="grid.html"> <span>Memory Cards</span> </a> </li>
-                        <li class="level2 nav-7-2-14 last"> <a href="grid.html"> <span>Cases</span> </a> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="level0 nav-6 level-top parent"> <a href="grid.html" class="level-top"> <span>Electronics</span> <span class="category-label">New</span></a>
-            <div style="display: none; left: 0px;" class="level0-wrapper dropdown-6col">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center grid13-8 itemgrid itemgrid-4col">
-                  <ul class="level0">
-                    <li class="level1 nav-6-3 parent item"> <a href="grid.html"> <span>Shoes </span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-3-9 first"> <a href="grid.html"> <span>Flat Shoes</span> </a> </li>
-                        <li class="level2 nav-6-3-10"> <a href="grid.html"> <span>Flat Sandals</span> </a> </li>
-                        <li class="level2 nav-6-3-11"> <a href="grid.html"> <span>Boots</span> </a> </li>
-                        <li class="level2 nav-6-3-11"> <a href="grid.html"> <span>Boots</span> </a> </li>
-                        <li class="level2 nav-6-3-12 last"> <a href="grid.html"> <span>Heels</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-4 parent item"> <a href="grid.html"> <span>Jewelry</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-4-13 first"> <a href="grid.html"> <span>Bracelets</span> </a> </li>
-                        <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Necklaces &amp; Pendants</span> </a> </li>
-                        <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Necklaces</span> </a> </li>
-                        <li class="level2 nav-6-4-14"> <a href="grid.html"> <span>Pendants</span> </a> </li>
-                        <li class="level2 nav-6-4-15 last"> <a href="grid.html"> <span>Pins &amp; Brooches</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-5 parent item"> <a href="grid.html"> <span>Dresses</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-5-16 first"> <a href="grid.html"> <span>Casual Dresses</span> </a> </li>
-                        <li class="level2 nav-6-5-17"> <a href="grid.html"> <span>Evening</span> </a> </li>
-                        <li class="level2 nav-6-5-18"> <a href="grid.html"> <span>Designer</span> </a> </li>
-                        <li class="level2 nav-6-5-18"> <a href="grid.html"> <span>Designer</span> </a> </li>
-                        <li class="level2 nav-6-5-19 last"> <a href="grid.html"> <span>Party</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-6-6 last parent item"> <a href="grid.html"> <span>Jackets</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-6-7-24 first"> <a href="grid.html"> <span>Coats</span> </a> </li>
-                        <li class="level2 nav-6-7-25"> <a href="grid.html"> <span>Jackets</span> </a> </li>
-                        <li class="level2 nav-6-7-26"> <a href="grid.html"> <span>Leather Jackets</span> </a> </li>
-                        <li class="level2 nav-6-7-26"> <a href="grid.html"> <span>Leather Jackets</span> </a> </li>
-                        <li class="level2 nav-6-7-27 last"> <a href="grid.html"> <span>Blazers</span> </a> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div class="nav-block nav-block-right std grid12-3"> <a class="product-image" title="Stablished fact reader" href="#"> <img alt="Product image" src="products-images/product1.jpg" width="150"></a>
-                  <div class="item-title"> <a href="#" title="Ut tincidunt tortor"> Sample Product </a> </div>
-                  <div class="price-box"> <span  class="regular-price"> <span class="price">$125.00</span> </span> </div>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="level0 nav-7 level-top parent"> <a class="level-top" href="grid.html"> <span>Furniture</span> </a>
-            <div class="level0-wrapper dropdown-6col" style="left: 0pt; display: none;">
-              <div class="level0-wrapper2">
-                <div class="nav-block nav-block-center grid12-8 itemgrid itemgrid-4col">
-                  <ul class="level0">
-                    <li class="level1 nav-7-1 first parent item"> <a href="grid.html"> <span>Smartphones</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-1-1 first"> <a href="grid.html"> <span>Samsung</span> </a> </li>
-                        <li class="level2 nav-7-1-2"> <a href="grid.html"> <span>Apple</span> </a> </li>
-                        <li class="level2 nav-7-1-4"> <a href="grid.html"> <span>BlackBerry</span> </a> </li>
-                        <li class="level2 nav-7-1-6"> <a href="grid.html"> <span>Nokia</span> </a> </li>
-                        <li class="level2 nav-7-1-7 last"> <a href="grid.html"> <span>HTC</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-7-3 parent item"> <a href="grid.html"> <span>Cameras</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-3-15 first"> <a href="grid.html"> <span>Digital Cameras</span> </a> </li>
-                        <li class="level2 nav-7-3-16"> <a href="grid.html"> <span>Camcorders</span> </a> </li>
-                        <li class="level2 nav-7-3-17"> <a href="grid.html"> <span>Lenses</span> </a> </li>
-                        <li class="level2 nav-7-3-18"> <a href="grid.html"> <span>Filters</span> </a> </li>
-                        <li class="level2 nav-7-3-19 last"> <a href="grid.html"> <span>Tripods</span> </a> </li>
-                      </ul>
-                    </li>
-                    <li class="level1 nav-7-4 last parent item"> <a href="grid.html"> <span>Accessories</span> </a>
-                      <ul class="level1">
-                        <li class="level2 nav-7-2-8 first"> <a href="grid.html"> <span>Headsets</span> </a> </li>
-                        <li class="level2 nav-7-2-9"> <a href="grid.html"> <span>Batteries</span> </a> </li>
-                        <li class="level2 nav-7-2-10"> <a href="grid.html"> <span>Screen Protectors</span> </a> </li>
-                        <li class="level2 nav-7-2-11"> <a href="grid.html"> <span>Memory Cards</span> </a> </li>
-                        <li class="level2 nav-7-2-14 last"> <a href="grid.html"> <span>Cases</span> </a> </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-                <div class="nav-block nav-block-right std grid12-4"><a href="grid.html"><img src="images/menu_furniture.png" alt="furniture" class="fade-on-hover"></a> </div>
-              </div>
-            </div>
-          </li>
-          <li class="level0 nav-8 level-top"> <a href="grid.html" class="level-top"> <span>Boys</span> </a> </li>
-          <li class="level0 nav-8 level-top"> <a href="grid.html" class="level-top"> <span>Girls</span> </a> </li>
-          <li class="nav-custom-link level0 level-top parent"> <a class="level-top" href="#"><span>Custom</span></a>
-            <div style="display: none; left: 0px;" class="level0-wrapper">
-              <div class="header-nav-dropdown-wrapper clearer">
-                <div class="grid12-5">
-                  <h4 class="heading">HTML5 + CSS3</h4>
-                  <div class="ccs3-html5-box"><em class="icon-html5">&nbsp;</em> <em class="icon-css3">&nbsp;</em></div>
-                  <p>Our designed to deliver almost everything you want to do online without requiring additional plugins.CSS3 has been split into "modules".</p>
-                </div>
-                <div class="grid12-5">
-                  <h4 class="heading">Responsive Design</h4>
-                  <a href="#//">
-                  <div class="icon-custom-reponsive"></div>
-                  </a>
-                  <p>Responsive design is a Web design to provide an optimal navigation with a minimum of resizing, and scrolling across a wide range of devices.</p>
-                </div>
-                <div class="grid12-5">
-                  <h4 class="heading">Google Fonts</h4>
-                  <a href="#//">
-                  <div class="icon-custom-google-font"></div>
-                  </a>
-                  <p>Our font delivery service is built upon a reliable, global network of servers. Our flexible solution provides multiple implementation options.</p>
-                </div>
-                <div class="grid12-5">
-                  <h4 class="heading">Smart Product Grid</h4>
-                  <a href="#//">
-                  <div class="icon-custom-grid"></div>
-                  </a>
-                  <p>Smart Product Grid is uses maximum available width of the screen to display content. It can be displayed on any screen or any devices.</p>
-                </div>
-                <br>
-              </div>
-            </div>
-          </li>
+          <%
+                ResultSet type_rs = sqltool.get_all_type();
+                while(type_rs.next()){
+                out.println("<li class=\"level0 nav-8 level-top\"> <a href=\"grid.jsp?type="+type_rs.getInt("typeID")+"\" class=\"level-top\"> <span>"+type_rs.getString("commodityTypeName")+"</span> </a> </li>");
+                }
+        
+        %> 
         </ul>
         <div id="form-search" class="search-bar">
-          <form id="search_mini_form" action="#" method="get">
-            <input class="search-bar-input" placeholder="Search entire store here..." type="text" value="" name="search" id="search">
+          <form id="search_mini_form" action="search_grid.jsp" method="get">
+            <input class="search-bar-input" placeholder="Search entire store here..." type="text" value="" name="key" id="search">
             <input class="search-bar-submit" type="submit" value="">
             <span class="search-icon"><img src="images/search-icon.png" alt="search-icon"></span>
           </form>
@@ -763,9 +484,17 @@
     <div class="container">
       <div class="row">
         <ul>
-          <li class="home"> <a href="index.html" title="Go to Home Page">Home</a><span>&raquo;</span></li>
-          <li class=""> <a href="grid.html" title="Go to Home Page">Women</a><span>&raquo;</span></li>
-          <li class="category13"><strong> Sample Product </strong></li>
+          <li class="home"> <a href="index.jsp" title="Go to Home Page">Home</a><span>&raquo;</span></li>
+        <%
+          if(request.getParameter("id")!=null && Integer.parseInt(request.getParameter("id"))>0){
+            String[] item_detial = sqltool.getitem(id).split("&");
+            out.println("<li class=\"\"> <a href=\"grid.jsp?type="+item_detial[7]+"\" title=\"Go to Home Page\">"+item_detial[5]+"</a><span>&raquo;</span></li>");
+            out.println("<li class=\"category13\"><strong>"+item_detial[1]+"</strong></li>");
+            
+          }else
+            out.println("ALL");
+
+         %>
         </ul>
       </div>
     </div>
@@ -1264,7 +993,7 @@
         <div class="footer-middle">
           <div class="col-md-3 col-sm-12 col-xs-12">
             <div class="footer-column-1">
-              <div class="footer-logo"><a href="index.html" title="Logo"><img src="images/footer-logo.png" alt="logo" ></a></div>
+              <div class="footer-logo"><a href="index.jsp" title="Logo"><img src="images/footer-logo.png" alt="logo" ></a></div>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
               <div class="social">
                 <ul class="link">
@@ -1293,7 +1022,7 @@
           <div class="col-md-2 col-sm-6 col-xs-12">
             <h4 class="yellow">Style Advisor</h4>
             <ul class="links">
-              <li class="first"><a title="Your Account" href="login.html">Your Account</a></li>
+              <li class="first"><a title="Your Account" href="login.jsp">Your Account</a></li>
               <li><a title="Information" href="#">Information</a></li>
               <li><a title="Addresses" href="#">Addresses</a></li>
               <li><a title="Addresses" href="#">Discount</a></li>
@@ -1440,69 +1169,7 @@
 </div>
 <!-- JavaScript -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script>
-function addcart(){
-    var num = document.getElementById("qty").value;
-    var id = document.getElementById("itemid").value;
-    var url = 'addcart.jsp?id='+id+'&num='+num;
-    var request=request_creat('GET',url)
-    request.onreadystatechange = function () {
-    if (request.readyState === 4) { 
-        if (request.status === 200) {
-            var meg = document.getElementById("success");
-            meg.innerHTML="Quantity:        "+request.responseText;
-            location.replace(location.href);
-        } else {
-            return 0;
-        }
-    } else {   } }
-    request.send();
-}
-
-function addcart_id(id){
-    var url = 'addcart.jsp?id='+id+'&num=1';
-    var request=request_creat('GET',url)
-    request.onreadystatechange = function () {
-    if (request.readyState === 4) { 
-        if (request.status === 200) {
-            location.replace(location.href);
-        } else {
-            return 0;
-        }
-    } else {   } }
-    request.send();
-}
-
-function delcart(id){
-    var url = 'delcart.jsp?id='+id;
-    var request=request_creat('GET',url)
-    request.onreadystatechange = function () {
-    if (request.readyState === 4) { 
-        if (request.status === 200) {
-        location.replace(location.href);
-        } else {
-            return 0;
-        }
-    } else {   } }
-    request.send();
-}
-
-function request_creat(method,url){
-    var request;
-    if (window.XMLHttpRequest) {
-        request = new XMLHttpRequest();
-    } else {
-        request = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-    if(method=="POST"){
-    request.open("POST",url,true);
-    }
-    if(method=="GET"){
-    request.open("GET",url);
-    }
-    return request;
-}
-</script>
+<script type="text/javascript" src="js/cart.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/common.js"></script>
 <script type="text/javascript" src="js/owl.carousel.min.js"></script>
